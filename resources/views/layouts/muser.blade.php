@@ -128,17 +128,17 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a style="color: #979797;border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;"
+                                <a style="color: #592f83;border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;"
                                    href="{{route('home')}}">
                                     <i class="fa fa-tachometer-alt"></i>&nbsp;Dashboard</a></li>
                             <li>
-                                <a style="color: #979797;border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;"
+                                <a style="color: #592f83;border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;"
                                    href="{{route('home')}}">
                                     <i class="fa fa-cogs"></i>&nbsp;Account Settings</a></li>
                             <li class="divider"></li>
                             <li>
                                 <a href="{{ route('logout') }}"
-                                   style="color: #979797;border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;"
+                                   style="color: #592f83;border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0;-ms-border-radius: 0;"
                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                     <i class="fa fa-sign-out-alt"></i>&nbsp;Sign Out</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -432,7 +432,7 @@
                                     <div class="col-lg-12">
                                         <input class="btn btn-default btn-login" type="submit"
                                                value="reset password"
-                                               style="background: #FA5555;border-color: #FA5555">
+                                               stylphp e="background: #FA5555;border-color: #FA5555">
                                     </div>
                                 </div>
                             </form>

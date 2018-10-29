@@ -396,7 +396,7 @@
         </g>
     </svg>
     @auth
-        <a href="{{Auth::user()->isSeeker() ? route('home-seeker') : route('home-agency')}}" id="home">
+        <a href="{{route('home')}}" id="home">
             <button class="denied__link">Go Home</button>
         </a>
         <script>
@@ -410,8 +410,7 @@
             @else
             swal({
                 title: 'ATTENTION!',
-                text: 'You\'re redirected here because you didn\'t signed in as a Job {{Auth::user()->isSeeker() ?
-                'Agency' : 'Seeker'}}.',
+                text: 'You\'re redirected here because you didn\'t signed in as a Customer.',
                 type: 'warning',
                 timer: '3500'
             });
