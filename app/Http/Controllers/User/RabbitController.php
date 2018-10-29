@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\layanan;
 use App\Order;
 use App\Portfolio;
 use App\Testimonial;
@@ -31,7 +32,8 @@ class RabbitController extends Controller
 
     public function order()
     {
-        return view('user.order');
+        $layanan = layanan::all();
+        return view('user.order',compact('layanan'));
     }
     public function postOrder(Request $request)
     {

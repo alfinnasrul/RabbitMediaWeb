@@ -18,6 +18,7 @@ class CreateLayanansTable extends Migration
             $table->string('nama_layanan');
             $table->string('isi_layanan');
             $table->string('jenis_layanan');
+            $table->string('harga')
             $table->timestamps();
         });
     }

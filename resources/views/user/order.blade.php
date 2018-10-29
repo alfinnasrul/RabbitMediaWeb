@@ -4,6 +4,11 @@
     <div id="fh5co-main">
         <div class="fh5co-narrow-content fh5co-border-bottom animate-box" data-animate-effect="fadeInLeft">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h1>Our Service</h1>
+                    </div>
+                </div>
                 <li class="nav-item">
                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
                 </li>
@@ -15,10 +20,17 @@
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    @foreach($layanan as $layanan)
+                        <a href=""> {{$layanan->nama_layanan}}</ul></a>
+                        <ul>{{$layanan->isi_layanan}}</ul>
+                        <ul>{{$layanan->harga}}</ul>
+                    @endforeach
+                </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
             </div>
+            <br><br>
             <div class="row">
                 <div class="col-md-4">
                     <h1>Order Form</h1>
