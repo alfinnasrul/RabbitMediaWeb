@@ -17,107 +17,56 @@
         <div class="fh5co-narrow-content">
             <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Our Services</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <div class="fh5co-icon">
-                            <i class="fa fa-video"></i>
-                        </div>
-                        <div class="fh5co-text">
-                            <h3>Videography</h3>
-                            <p>Video production services for movie/documentary, video advertising, company profile
-                                video, event documentary, aftermovies, etc. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <div class="fh5co-icon">
-                            <i class="fa fa-camera"></i>
-                        </div>
-                        <div class="fh5co-text">
-                            <h3>Photoshoot</h3>
-                            <p>We provide a variety of photoshoot services for graduation, pre-wedding, studio
-                                photoshoot, maternity photoshoot, and more.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <div class="fh5co-icon">
-                            <i class="fa fa-film"></i>
-                        </div>
-                        <div class="fh5co-text">
-                            <h3>Wedding Clip</h3>
-                            <p>We provide wedding and reception documentary and also wedding clip producing with
-                                romantic-cinematic effect.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <div class="fh5co-icon">
-                            <i class="fa fa-desktop"></i>
-                        </div>
-                        <div class="fh5co-text">
-                            <h3>Mockup Design</h3>
-                            <p>We also provide application (web/mobile-based) mockup design services with minimalist UI
-                                and UX that can be customized to your needs.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <div class="fh5co-icon">
-                            <i class="fa fa-paint-brush"></i>
-                        </div>
-                        <div class="fh5co-text">
-                            <h3>Graphic Design</h3>
-                            <p>Services for designing logo, poster, curriculum vitae (CV), and other products.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <div class="fh5co-icon">
-                            <i class="fa fa-print"></i>
-                        </div>
-                        <div class="fh5co-text">
-                            <h3>Digital Offset</h3>
-                            <p>Services for your printing needs. we print a wide variety of products such as: catalogs,
-                                magazines, banners, ID cards, flyers, brochures, stickers, yearbooks, etc.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <a target="_blank" href="https://drive.google.com/open?id=11DZLDU6qtKrKZ0dN7nE18ZjNLVWB6Vhx">
-                            <div class="fh5co-icon">
-                                <i class="fa fa-file-pdf"></i>
+                <div class="col-lg-12">
+                    @foreach($jenisLayanans as $jenisLayanan)
+                        <div class="col-lg-6">
+                            <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+                                <div class="fh5co-icon">
+                                    <a href="{{route('detail.service',['id'=> $jenisLayanan->id])}}">
+                                        <img src="{{asset('images/avatar.png')}}" width="64">
+                                    </a>
+                                </div>
+                                <div class="fh5co-text">
+                                    <h3><a href="{{route('detail.service',['id' => $jenisLayanan->id])}}" style="text-decoration: none">{{$jenisLayanan->nama}}</a></h3>
+                                    <p>{{$jenisLayanan->deskripsi}}</p>
+                                </div>
                             </div>
-                        </a>
-                        <div class="fh5co-text">
-                            <h3>Pricelist</h3>
-                            <p>For further details about services and prices, please <a target="_blank"
-                                                                                        href="https://drive.google.com/open?id=11DZLDU6qtKrKZ0dN7nE18ZjNLVWB6Vhx">click
-                                    here.</a></p>
+                        </div>
+                    @endforeach
+                    <div class="col-lg-6">
+                        <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+                            <a target="_blank"
+                               href="https://drive.google.com/open?id=11DZLDU6qtKrKZ0dN7nE18ZjNLVWB6Vhx">
+                                <div class="fh5co-icon">
+                                    <i class="fa fa-file-pdf"></i>
+                                </div>
+                            </a>
+                            <div class="fh5co-text">
+                                <h3>Pricelist</h3>
+                                <p>For further details about services and prices, please <a target="_blank"
+                                                                                            href="https://drive.google.com/open?id=11DZLDU6qtKrKZ0dN7nE18ZjNLVWB6Vhx">click
+                                        here.</a></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
-                        <a target="_blank" href="https://drive.google.com/open?id=1VhTZ6NtB8P7sA86In7mrXbZDeQM9aF8d">
-                            <div class="fh5co-icon">
-                                <i class="fa fa-file-pdf"></i>
+                    <div class="col-lg-6">
+                        <div class="fh5co-feature animate-box" data-animate-effect="fadeInLeft">
+                            <a target="_blank"
+                               href="https://drive.google.com/open?id=1VhTZ6NtB8P7sA86In7mrXbZDeQM9aF8d">
+                                <div class="fh5co-icon">
+                                    <i class="fa fa-file-pdf"></i>
+                                </div>
+                            </a>
+                            <div class="fh5co-text">
+                                <h3>Wedding Full Pack</h3>
+                                <p>For further details about <em>wedding services</em> and prices, please
+                                    <a target="_blank"
+                                       href="https://drive.google.com/open?id=1VhTZ6NtB8P7sA86In7mrXbZDeQM9aF8d">
+                                        click here.</a><br> And <a target="_blank"
+                                                                   href="https://drive.google.com/open?id=1aU-cSrJgZXrDEsxMDAdRx_f97B9aMW8u">click
+                                        here</a> for the pricelist of wedding <em>photo/video-only</em> pack.
+                                </p>
                             </div>
-                        </a>
-                        <div class="fh5co-text">
-                            <h3>Wedding Full Pack</h3>
-                            <p>For further details about <em>wedding services</em> and prices, please
-                                <a target="_blank" href="https://drive.google.com/open?id=1VhTZ6NtB8P7sA86In7mrXbZDeQM9aF8d">
-                                    click here.</a><br> And <a target="_blank" href="https://drive.google.com/open?id=1aU-cSrJgZXrDEsxMDAdRx_f97B9aMW8u">click here</a> for the pricelist of wedding <em>photo/video-only</em> pack.
-                            </p>
                         </div>
                     </div>
                 </div>
@@ -203,7 +152,8 @@
             </div>
         </div>
 
-        <div class="fh5co-counters" style="background-image: url(images/hero.jpg);" data-stellar-background-ratio="0.5"
+        <div class="fh5co-counters" style="background-image: url({{asset('images/hero.jpg')}});"
+             data-stellar-background-ratio="0.5"
              id="counter-animate">
             <div class="fh5co-narrow-content animate-box">
                 <div class="row">
@@ -225,4 +175,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection

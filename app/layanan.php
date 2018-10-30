@@ -8,5 +8,10 @@ class layanan extends Model
 {
     protected $table = 'layanans';
 
-    protected $fillable = ['id','judul'];
+    protected $guarded = ['id'];
+
+    public function jenisLayanans()
+    {
+        $this->belongsTo(JenisLayanan::class);
+    }
 }

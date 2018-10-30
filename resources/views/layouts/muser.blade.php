@@ -492,6 +492,7 @@
 <script src="{{asset('js/main.js')}}"></script>
 @include('layouts.partials._scripts')
 @include('layouts.partials._alert')
+@stack('scripts')
 <script>
     var title = document.getElementsByTagName("title")[0].innerHTML;
     (function titleScroller(text) {

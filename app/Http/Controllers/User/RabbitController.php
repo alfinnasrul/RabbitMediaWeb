@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
+use App\JenisLayanan;
 use App\layanan;
 use App\Order;
 use App\Portfolio;
@@ -16,7 +17,9 @@ class RabbitController extends Controller
     {
         $portfolios = Portfolio::orderBy('id','asc')->take(12)->get();
         $testimonials = Testimonial::where('rate', '>','3')->take(10)->orderBy('id','desc')->get();
-        return view('user.beranda',compact('portfolios','testimonials'));
+        $jenisLayanans = JenisLayanan::all();
+
+        return view('user.beranda',compact('portfolios','testimonials','jenisLayanans'));
     }
 
     public function about()
@@ -30,11 +33,22 @@ class RabbitController extends Controller
         return view('user.portfolio',compact('portfolios'));
     }
 
+    public function detailService($id)
+    {
+        $jenislayanan = JenisLayanan::find($id);
+        $layanans = layanan::where('jenislayanan_id',$jenislayanan->id)->get();
+
+        return view('user.service',compact('jenislayanan','layanans'));
+    }
+
     public function order()
     {
-        $layanan = layanan::all();
-        return view('user.order',compact('layanan'));
+        $types = JenisLayanan::all();
+        $graphicdesigns = layanan::where('jenislayanan_id', 1)->get();
+
+        return view('user.order',compact('types'));
     }
+
     public function postOrder(Request $request)
     {
         Order::create($request->all());

@@ -40,6 +40,11 @@ Route::group(['namespace' => 'User', 'prefix' => '/'], function () {
         'as' => 'order.submit'
     ]);
 
+    Route::get('service/{id}', [
+        'uses' => 'RabbitController@detailService',
+        'as' => 'detail.service'
+    ]);
+
     Route::get('feedback', [
         'uses' => 'RabbitController@feedback',
         'as' => 'feedback'
