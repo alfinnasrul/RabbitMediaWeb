@@ -3,7 +3,8 @@
 @section('content')
     <div id="fh5co-main">
         <div class="fh5co-narrow-content fh5co-border-bottom animate-box" data-animate-effect="fadeInLeft">
-            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Our {{$jenislayanan->nama}} Services</h2>
+            <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Our {{$jenislayanan->nama}}
+                Services</h2>
             <div class="row">
                 <div class="col-lg-12">
                     @foreach($layanans as $layanan)
@@ -12,7 +13,8 @@
                                 <h1 class="text-center"
                                     style="color: #592f83; font-size: 40px;"> {{$layanan->nama_layanan}} </h1>
                                 <h2>Fasilitas : </h2> {{$layanan->isi_layanan}}<br><br>
-                                <h2>Harga : </h2> {{$layanan->harga}}
+                                <h2>Harga : </h2> {{$layanan->harga}}<br><br>
+                                <center><a href="{{route('order-id', ['id' =>  $es = encrypt($layanan->id)])}}"><button type="button" class="btn btn-primary btn-lg">Pilih</button></a></center>
                             </div>
                         </div>
                     @endforeach

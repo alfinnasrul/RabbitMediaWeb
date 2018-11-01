@@ -20,7 +20,7 @@ class CreateTablePemesanans extends Migration
             $table->string('nama_user');
             $table->string('email');
             $table->integer('layanan_id')->unsigned();
-            $table->foreign('layanan_id')->references('id_layanan')->on('layanans');
+            $table->foreign('layanan_id')->references('id')->on('layanans');
             $table->date('tgl_booking');
             $table->integer('no_telp');
             $table->string('alamat');

@@ -14,7 +14,7 @@ class CreateTableLayanans extends Migration
     public function up()
     {
         Schema::create('layanans', function (Blueprint $table) {
-            $table->increments('id_layanan');
+            $table->increments('id');
             $table->string('nama_layanan');
             $table->string('isi_layanan');
             $table->integer('jenislayanan_id')->unsigned();

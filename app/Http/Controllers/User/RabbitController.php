@@ -37,16 +37,22 @@ class RabbitController extends Controller
     {
         $jenislayanan = JenisLayanan::find($id);
         $layanans = layanan::where('jenislayanan_id',$jenislayanan->id)->get();
-
         return view('user.service',compact('jenislayanan','layanans'));
     }
 
     public function order()
     {
-        $types = JenisLayanan::all();
-        $graphicdesigns = layanan::where('jenislayanan_id', 1)->get();
+        $types = layanan::all();
+        $detail = null;
+        return view('user.order',compact('types','detail'));
+    }
 
-        return view('user.order',compact('types'));
+    public function orderid(Request $request)
+    {
+
+        $detail = layanan::find(decrypt($request->id));
+        $types = layanan::all();
+        return view('user.order',compact('types','detail'));
     }
 
     public function postOrder(Request $request)

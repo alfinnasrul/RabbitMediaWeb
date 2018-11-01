@@ -41,13 +41,14 @@
                                     <div class="form-group">
                                         <label for="service" class="control-label">Service :</label>
                                         <select id="service" name="service" class="form-control" required>
+                                            @if($detail != null)
+                                                <option value="{{$detail->id}}" selected>{{App\JenisLayanan::find($detail->jenislayanan_id)->nama}} - {{$detail->nama_layanan}}</option>
+                                                @else
                                             <option value="" disabled selected>-- Choose Service--</option>
-                                            <option value="Videography">Videography</option>
-                                            <option value="Photoshoot">Photoshoot</option>
-                                            <option value="Wedding Clip">Wedding Clip</option>
-                                            <option value="Mockup Design">Mockup Design</option>
-                                            <option value="Graphic Design">Graphic Design</option>
-                                            <option value="Digital Offset">Digital Offset</option>
+                                            @endif
+                                            @foreach($types as $layanan)
+                                            <option value="{{$layanan->id}}">{{App\JenisLayanan::find($layanan->jenislayanan_id)->nama}} - {{$layanan->nama_layanan}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">

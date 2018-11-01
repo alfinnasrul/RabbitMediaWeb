@@ -432,7 +432,7 @@
                                     <div class="col-lg-12">
                                         <input class="btn btn-default btn-login" type="submit"
                                                value="reset password"
-                                               stylphp e="background: #FA5555;border-color: #FA5555">
+                                               style="background: #FA5555;border-color: #FA5555">
                                     </div>
                                 </div>
                             </form>

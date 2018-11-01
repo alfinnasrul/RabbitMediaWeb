@@ -17,6 +17,7 @@ class CreateJenisLayanansTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->text('deskripsi');
+            $table->string('icon');
             $table->timestamps();
         });
     }

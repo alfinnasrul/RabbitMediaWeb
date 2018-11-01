@@ -35,6 +35,11 @@ Route::group(['namespace' => 'User', 'prefix' => '/'], function () {
         'as' => 'order'
     ]);
 
+    Route::get('order/{id}', [
+        'uses' => 'RabbitController@orderid',
+        'as' => 'order-id'
+    ]);
+
     Route::post('order', [
         'uses' => 'RabbitController@postOrder',
         'as' => 'order.submit'
