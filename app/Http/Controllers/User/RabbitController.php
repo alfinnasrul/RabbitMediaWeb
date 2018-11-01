@@ -7,6 +7,7 @@ use App\layanan;
 use App\Order;
 use App\Portfolio;
 use App\Testimonial;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
@@ -44,7 +45,8 @@ class RabbitController extends Controller
     {
         $types = layanan::all();
         $detail = null;
-        return view('user.order',compact('types','detail'));
+        $user = User::all();
+        return view('user.order',compact('types','detail','user'));
     }
 
     public function orderid(Request $request)
@@ -52,7 +54,8 @@ class RabbitController extends Controller
 
         $detail = layanan::find(decrypt($request->id));
         $types = layanan::all();
-        return view('user.order',compact('types','detail'));
+        $user = User::all();
+        return view('user.order',compact('types','detail','user'));
     }
 
     public function postOrder(Request $request)

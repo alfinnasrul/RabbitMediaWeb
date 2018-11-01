@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->text('alamat')->nullable();
+            $table->string('no_telp')->nullable();
             $table->boolean('status');
             $table->string('verifyToken', 255)->nullable();
             $table->rememberToken();

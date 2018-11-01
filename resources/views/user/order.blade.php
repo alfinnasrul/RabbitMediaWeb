@@ -16,25 +16,28 @@
                                 {{csrf_field()}}
                                 <div class="col-md-6">
                                     <div class="form-group">
+
                                         <label for="name" class="control-label">Name :</label>
                                         <input id="name" type="text" class="form-control" placeholder="your name"
-                                               name="name" required>
+                                               name="name" value="@guest @else {{ Auth::user()->name }} @endguest" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="email" class="control-label">Email :</label>
                                         <input id="email" type="email" class="form-control" placeholder="your email"
-                                               name="email" required>
+                                               name="email" value="@guest @else {{ Auth::user()->email }} @endguest" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="phone" class="control-label">Phone :</label><br>
                                         <input id="phone" type="text" class="form-control"
                                                placeholder="your phone number" name="phone"
+                                               value="@guest @else {{ Auth::user()->email }} @endguest"
                                                onkeypress="return hanyaAngka(event,false)" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="address" class="control-label">Address :</label>
                                         <input id="address" type="text" class="form-control"
-                                               placeholder="your current address" name="address" required>
+                                               placeholder="your current address" name="address"
+                                               value="@guest @else {{ Auth::user()->email }} @endguest" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -60,6 +63,7 @@
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-primary btn-block" value="SUBMIT">
                                     </div>
+
                                 </div>
                             </form>
                         </div>
