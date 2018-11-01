@@ -7,10 +7,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     @foreach($layanans as $layanan)
-                        <div class="col-lg-6">
-                            Nama Layanan: {{$layanan->nama_layanan}}<br>
-                            Isi Layanan: {{$layanan->isi_layanan}}<br>
-                            Harga Layanan: {{$layanan->harga}}
+                        <div class="thumbnail col-lg-6">
+                            <div class="caption">
+                                <h1 class="text-center"
+                                    style="color: #592f83; font-size: 40px;"> {{$layanan->nama_layanan}} </h1>
+                                <h2>Fasilitas : </h2> {{$layanan->isi_layanan}}<br><br>
+                                <h2>Harga : </h2> {{$layanan->harga}}
+                            </div>
                         </div>
                     @endforeach
                 </div>
