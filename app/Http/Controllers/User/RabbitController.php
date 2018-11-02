@@ -16,11 +16,11 @@ class RabbitController extends Controller
 {
     public function index()
     {
-        $portfolios = Portfolio::orderBy('id','asc')->take(12)->get();
-        $testimonials = Testimonial::where('rate', '>','3')->take(10)->orderBy('id','desc')->get();
+        $portfolios = Portfolio::orderBy('id', 'asc')->take(12)->get();
+        $testimonials = Testimonial::where('rate', '>', '3')->take(10)->orderBy('id', 'desc')->get();
         $jenisLayanans = JenisLayanan::all();
 
-        return view('user.beranda',compact('portfolios','testimonials','jenisLayanans'));
+        return view('user.beranda', compact('portfolios', 'testimonials', 'jenisLayanans'));
     }
 
     public function about()
@@ -30,15 +30,15 @@ class RabbitController extends Controller
 
     public function portfolio()
     {
-        $portfolios = Portfolio::orderBy('id','desc')->get();
-        return view('user.portfolio',compact('portfolios'));
+        $portfolios = Portfolio::orderBy('id', 'desc')->get();
+        return view('user.portfolio', compact('portfolios'));
     }
 
     public function detailService($id)
     {
         $jenislayanan = JenisLayanan::find($id);
-        $layanans = layanan::where('jenislayanan_id',$jenislayanan->id)->get();
-        return view('user.service',compact('jenislayanan','layanans'));
+        $layanans = layanan::where('jenislayanan_id', $jenislayanan->id)->get();
+        return view('user.service', compact('jenislayanan', 'layanans'));
     }
 
     public function order()
@@ -46,7 +46,7 @@ class RabbitController extends Controller
         $types = layanan::all();
         $detail = null;
         $user = User::all();
-        return view('user.order',compact('types','detail','user'));
+        return view('user.order', compact('types', 'detail', 'user'));
     }
 
     public function orderid(Request $request)
@@ -55,12 +55,21 @@ class RabbitController extends Controller
         $detail = layanan::find(decrypt($request->id));
         $types = layanan::all();
         $user = User::all();
-        return view('user.order',compact('types','detail','user'));
+        return view('user.order', compact('types', 'detail', 'user'));
     }
 
     public function postOrder(Request $request)
     {
-        Order::create($request->all());
+        $array = $request->toArray();
+//        dd($array);
+        Order::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'service' => $request->service,
+            'description' => $request->description
+        ]);
         return view('user.beranda')->withSuccess('Wait for any further confirmation from us via email/phone. Thanks for using our services! :)');
     }
 
@@ -73,6 +82,7 @@ class RabbitController extends Controller
     {
         return view('user.feedback');
     }
+
     public function postFeedback(Request $request)
     {
         Testimonial::create($request->all());

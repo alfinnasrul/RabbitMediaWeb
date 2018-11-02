@@ -40,11 +40,6 @@ Route::group(['namespace' => 'User', 'prefix' => '/'], function () {
         'as' => 'order-id'
     ]);
 
-    Route::post('order', [
-        'uses' => 'RabbitController@postOrder',
-        'as' => 'order.submit'
-    ]);
-
     Route::get('service/{id}', [
         'uses' => 'RabbitController@detailService',
         'as' => 'detail.service'
@@ -65,11 +60,15 @@ Route::group(['namespace' => 'User', 'prefix' => '/'], function () {
         'as' => 'contact'
     ]);
 
-    Route::post('contact', [
+    Route::put('contact', [
         'uses' => 'MailController@postContact',
         'as' => 'contact.submit'
     ]);
 
+    Route::post('order/save', [
+        'uses' => 'RabbitController@postOrder',
+        'as' => 'order.submit'
+    ]);
 
 });
 
