@@ -70,7 +70,7 @@ class RabbitController extends Controller
             'service' => $request->service,
             'description' => $request->description
         ]);
-        return view('user.beranda')->withSuccess('Wait for any further confirmation from us via email/phone. Thanks for using our services! :)');
+        return redirect()->route('home')->withSuccess('Wait for any further confirmation from us via email/phone. Thanks for using our services! :)');
     }
 
     public function contact()
