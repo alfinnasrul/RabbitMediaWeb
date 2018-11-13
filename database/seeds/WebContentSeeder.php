@@ -39,6 +39,7 @@ class WebContentSeeder extends Seeder
             ]);
         }
 
+
         \App\JenisLayanan::find(1)->update([
             'icon' => 'videography.png',
             'nama' => 'Videography',
