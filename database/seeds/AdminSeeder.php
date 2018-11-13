@@ -23,6 +23,7 @@ class AdminSeeder extends Seeder
                     'name' => 'Rabbit Media',
                     'email' => 'rm.rabbitmedia@gmail.com',
                     'password' => bcrypt('secret'),
+                    'jobdesk_id' => rand(\App\jobdesk::min('id'), \App\jobdesk::max('id')),
                     'remember_token' => str_random(10),
                     'role' => $role,
                 ]);
@@ -33,6 +34,7 @@ class AdminSeeder extends Seeder
                         'name' => $faker->firstName . ' ' . $faker->lastName,
                         'email' => $faker->unique()->safeEmail,
                         'password' => bcrypt('secret'),
+                        'jobdesk_id' => rand(\App\jobdesk::min('id'), \App\jobdesk::max('id')),
                         'remember_token' => str_random(10),
                         'role' => $role,
                     ]);
@@ -44,6 +46,7 @@ class AdminSeeder extends Seeder
                         'name' => $faker->firstName . ' ' . $faker->lastName,
                         'email' => $faker->unique()->safeEmail,
                         'password' => bcrypt('secret'),
+                        'jobdesk_id' => rand(\App\jobdesk::min('id'), \App\jobdesk::max('id')),
                         'remember_token' => str_random(10),
                         'role' => $role,
                     ]);
@@ -55,6 +58,7 @@ class AdminSeeder extends Seeder
                         'name' => $faker->firstName . ' ' . $faker->lastName,
                         'email' => $faker->unique()->safeEmail,
                         'password' => bcrypt('secret'),
+                        'jobdesk_id' => rand(\App\jobdesk::min('id'), \App\jobdesk::max('id')),
                         'remember_token' => str_random(10),
                         'role' => $role,
                     ]);

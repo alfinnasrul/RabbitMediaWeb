@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKeunggulansTable extends Migration
+class CreateStaffAvailablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateKeunggulansTable extends Migration
      */
     public function up()
     {
-        Schema::create('keunggulans', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('judul');
-            $table->string('isi');
+        Schema::create('staff_availables', function (Blueprint $table) {
+            $table->integer('admin_id')->unsigned();
+            $table->foreign('admin_id')->references('id')->on('admins')
+                ->onUpdate('CASCADE')->onDelete('CASCADE');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateKeunggulansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keunggulans');
+        Schema::dropIfExists('staff_availables');
     }
 }

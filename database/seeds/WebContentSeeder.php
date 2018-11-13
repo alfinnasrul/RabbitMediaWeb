@@ -39,6 +39,20 @@ class WebContentSeeder extends Seeder
             ]);
         }
 
+        for ($c = 0; $c < 3; $c++) {
+            \App\layanan::create([
+                'nama_layanan' => $faker->sentence(3, true),
+                'isi_layanan' => $faker->sentence(10, true),
+                'jenislayanan_id' => rand(\App\JenisLayanan::min('id'), \App\JenisLayanan::max('id')),
+                'harga' => $faker->sentence(10, true),
+            ]);
+        }
+
+        for ($c = 0; $c < 4; $c++) {
+            \App\jobdesk::create([
+                'jabatan' => $faker->sentence(3, true),
+            ]);
+        }
 
         \App\JenisLayanan::find(1)->update([
             'icon' => 'videography.png',
@@ -70,5 +84,43 @@ class WebContentSeeder extends Seeder
             'nama' => 'Digital Offset',
             'deskripsi' => 'Services for your printing needs. we print a wide variety of products such as: catalogs, magazines, banners, ID cards, flyers, brochures, stickers, yearbooks, etc.'
         ]);
+
+        \App\layanan::find(1)->update([
+            'nama_layanan' => 'Paket FotoShoot',
+            'isi_layanan' => '1 Fotografer, 1 Pengarah Gaya, No Limit Foto, DLL',
+            'jenislayanan_id' => '2',
+            'harga' => '500000',
+        ]);
+
+        \App\layanan::find(2)->update([
+            'nama_layanan' => 'Paket VideoShoot',
+            'isi_layanan' => '1 Fotografer, 1 Pengarah Gaya, No Limit Foto, DLL',
+            'jenislayanan_id' => '1',
+            'harga' => '500000',
+        ]);
+
+        \App\layanan::find(3)->update([
+            'nama_layanan' => 'Paket DesainGrafis',
+            'isi_layanan' => '1 Fotografer, 1 Pengarah Gaya, No Limit Foto, DLL',
+            'jenislayanan_id' => '4',
+            'harga' => '500000',
+        ]);
+
+        \App\jobdesk::find(1)->update([
+            'jabatan' => 'Admin',
+        ]);
+
+        \App\jobdesk::find(2)->update([
+            'jabatan' => 'Videographer',
+        ]);
+
+        \App\jobdesk::find(3)->update([
+            'jabatan' => 'Photographer',
+        ]);
+
+        \App\jobdesk::find(4)->update([
+            'jabatan' => 'Design Grafis',
+        ]);
+
     }
 }
